@@ -1,0 +1,54 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Servis_.IndexModel
+
+@{
+    ViewData["Title"] = "Виды услуг";
+}
+
+<h1>Список видов услуг</h1>
+
+<p>
+    <a asp-page="Create">Добавить новый вид</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Servis[0].Servis_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servis[0].Servis_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servis[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servis[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Servis) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Servis_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Servis_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробная информация</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

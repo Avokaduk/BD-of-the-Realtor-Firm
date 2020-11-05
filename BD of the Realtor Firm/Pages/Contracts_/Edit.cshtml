@@ -1,0 +1,65 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Contracts_.EditModel
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<h1>Изменить информацию</h1>
+
+<h4>Договор</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Contracts.ID" />
+            <div class="form-group">
+                <label asp-for="Contracts.Data" class="control-label"></label>
+                <input asp-for="Contracts.Data" class="form-control" />
+                <span asp-validation-for="Contracts.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contracts.SellersID" class="control-label"></label>
+                <input asp-for="Contracts.SellersID" class="form-control" />
+                <span asp-validation-for="Contracts.SellersID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contracts.BuyersID" class="control-label"></label>
+                <input asp-for="Contracts.BuyersID" class="form-control" />
+                <span asp-validation-for="Contracts.BuyersID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contracts.amount" class="control-label"></label>
+                <input asp-for="Contracts.amount" class="form-control" />
+                <span asp-validation-for="Contracts.amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contracts.Cost" class="control-label"></label>
+                <input asp-for="Contracts.Cost" class="form-control" />
+                <span asp-validation-for="Contracts.Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contracts.TypeID" class="control-label"></label>
+                <input asp-for="Contracts.TypeID" class="form-control" />
+                <span asp-validation-for="Contracts.TypeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contracts.StaffID" class="control-label"></label>
+                <input asp-for="Contracts.StaffID" class="form-control" />
+                <span asp-validation-for="Contracts.StaffID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Вернуться к таблице</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

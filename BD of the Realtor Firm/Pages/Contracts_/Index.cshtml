@@ -1,0 +1,108 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Contracts_.IndexModel
+
+@{
+    ViewData["Title"] = "Договоры";
+}
+
+<h1>Список договоров</h1>
+
+<p>
+    <a asp-page="Create">Добавить договор</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Contracts[0].Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contracts[0].Sellers_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contracts[0].Buyers_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contracts[0].amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contracts[0].Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contracts[0].Type_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contracts[0].Staff_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Contracts) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Sellers.First(r => r.ID == item.SellersID).Full_name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Buyers.First(r => r.ID == item.BuyersID).Full_name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Apartments.First(r => r.ID == item.TypeID).Type_name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(r => r.ID == item.StaffID).Full_name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изсенить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробная информация</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

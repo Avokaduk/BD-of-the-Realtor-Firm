@@ -1,0 +1,51 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Positions_.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить информацию";
+}
+
+<h1>Удалиь информацию о должности</h1>
+
+<div>
+    <h4>Должность</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Position_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Position_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Position_name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Position_name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Salary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Salary)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Responsibilities)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Responsibilities)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Requirements)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Requirements)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Positions.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться к таблице</a>
+    </form>
+</div>

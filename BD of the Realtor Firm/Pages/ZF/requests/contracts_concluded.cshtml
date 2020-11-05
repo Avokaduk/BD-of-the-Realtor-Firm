@@ -1,0 +1,81 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.ZF.requests.contracts_concludedModel
+@{
+    <h1>Список договоров</h1>
+
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contracts[0].Sellers_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contracts[0].Buyers_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contracts[0].Type_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contracts[0].Staff_ID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Contracts)
+            {
+                <tr>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Sellers.First(r => r.ID == item.SellersID).Full_name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Buyers.First(r => r.ID == item.BuyersID).Full_name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Apartments.First(r => r.ID == item.TypeID).Type_name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Staff.First(r => r.ID == item.StaffID).Full_name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

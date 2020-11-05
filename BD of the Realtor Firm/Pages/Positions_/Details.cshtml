@@ -1,0 +1,49 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Positions_.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробная информация";
+}
+
+<h1>Подробная информация</h1>
+
+<div>
+    <h4>Должность</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Position_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Position_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Position_name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Position_name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Salary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Salary)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Responsibilities)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Responsibilities)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Positions.Requirements)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Positions.Requirements)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Positions.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться к таблице</a>
+</div>

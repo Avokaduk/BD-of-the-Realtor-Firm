@@ -1,0 +1,111 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Sellers_.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить информацию";
+}
+
+<h1>Удалить информацию о продавце</h1>
+
+<div>
+    <h4>ПРодавец</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Sellers_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Sellers_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Full_name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Full_name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.data)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Passport_data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Passport_data)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.TypeID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.TypeID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Address_apartament)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Address_apartament)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Number_rooms)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Number_rooms)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Area)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Area)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Bathroom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Bathroom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Mark_phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Mark_phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sellers.Information)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sellers.Information)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Sellers.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться к таблице</a>
+    </form>
+</div>

@@ -1,0 +1,43 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.ZF.requests.buyModel
+@{
+    <h1>Список покупателей</h1>
+
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Buyers[0].Full_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Buyers[0].Type_ID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Buyers)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Full_name)
+                    </td>
+                    <td>
+                        @{
+                            try
+                            {
+                                @Model.Apartments.First(r => r.ID == item.TypeID).Type_name
+                            }
+                            catch
+                            {
+                                <p> данных нет </p>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

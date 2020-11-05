@@ -1,0 +1,123 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Buyers_.IndexModel
+
+@{
+    ViewData["Title"] = "Покупатели";
+}
+
+<h1>Список покупателей</h1>
+
+<p>
+    <a asp-page="Create">Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Buyers_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Full_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Passport_data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Type_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Number_rooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Bathroom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Mark_phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyers[0].Wishes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Buyers) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Buyers_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Full_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passport_data)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Apartments.First(r => r.ID == item.TypeID).Type_name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number_rooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bathroom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mark_phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wishes)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробная информация</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

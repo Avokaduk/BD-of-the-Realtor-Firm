@@ -1,0 +1,87 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Staff_.IndexModel
+
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+
+<h1>Список сотрудников</h1>
+
+<p>
+    <a asp-page="Create">Добавить сотрудника</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Staff_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Full_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Passport_data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Position_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Staff) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Full_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passport_data)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Position.First(r => r.ID == item.PositionID).Position_name
+                    }
+                    catch
+                    {
+                        <p> данных нет </p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробная информация</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

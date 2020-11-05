@@ -1,0 +1,99 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Buyers_.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить";
+}
+
+<h1>Добавить</h1>
+
+<h4>Покупатель</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Buyers.Buyers_ID" class="control-label"></label>
+                <input asp-for="Buyers.Buyers_ID" class="form-control" />
+                <span asp-validation-for="Buyers.Buyers_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Full_name" class="control-label"></label>
+                <input asp-for="Buyers.Full_name" class="form-control" />
+                <span asp-validation-for="Buyers.Full_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Gender" class="control-label"></label>
+                <input asp-for="Buyers.Gender" class="form-control" />
+                <span asp-validation-for="Buyers.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.data" class="control-label"></label>
+                <input asp-for="Buyers.data" class="form-control" />
+                <span asp-validation-for="Buyers.data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Address" class="control-label"></label>
+                <input asp-for="Buyers.Address" class="form-control" />
+                <span asp-validation-for="Buyers.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Phone" class="control-label"></label>
+                <input asp-for="Buyers.Phone" class="form-control" />
+                <span asp-validation-for="Buyers.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Passport_data" class="control-label"></label>
+                <input asp-for="Buyers.Passport_data" class="form-control" />
+                <span asp-validation-for="Buyers.Passport_data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.TypeID" class="control-label"></label>
+                <input asp-for="Buyers.TypeID" class="form-control" />
+                <span asp-validation-for="Buyers.TypeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Number_rooms" class="control-label"></label>
+                <input asp-for="Buyers.Number_rooms" class="form-control" />
+                <span asp-validation-for="Buyers.Number_rooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Area" class="control-label"></label>
+                <input asp-for="Buyers.Area" class="form-control" />
+                <span asp-validation-for="Buyers.Area" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Bathroom" class="control-label"></label>
+                <input asp-for="Buyers.Bathroom" class="form-control" />
+                <span asp-validation-for="Buyers.Bathroom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Mark_phone" class="control-label"></label>
+                <input asp-for="Buyers.Mark_phone" class="form-control" />
+                <span asp-validation-for="Buyers.Mark_phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Price" class="control-label"></label>
+                <input asp-for="Buyers.Price" class="form-control" />
+                <span asp-validation-for="Buyers.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Buyers.Wishes" class="control-label"></label>
+                <input asp-for="Buyers.Wishes" class="form-control" />
+                <span asp-validation-for="Buyers.Wishes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к таблице</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

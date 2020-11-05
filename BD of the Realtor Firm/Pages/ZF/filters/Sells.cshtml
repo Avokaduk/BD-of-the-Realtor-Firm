@@ -1,0 +1,33 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.ZF.filters.SellsModel
+@{
+    <h1>Список продавцов</h1>
+
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sellers[0].Full_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sellers[0].Type_ID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Sellers)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Full_name)
+                    </td>
+                    <td>
+                        @Model.Apartments.Type_name
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

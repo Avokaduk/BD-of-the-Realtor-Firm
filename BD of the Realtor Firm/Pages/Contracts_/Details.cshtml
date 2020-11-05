@@ -1,0 +1,61 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Contracts_.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробная информация";
+}
+
+<h1>Подробная информация</h1>
+
+<div>
+    <h4>Договоры</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contracts.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contracts.Data)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contracts.SellersID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contracts.SellersID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contracts.BuyersID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contracts.BuyersID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contracts.amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contracts.amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contracts.Cost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contracts.Cost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contracts.TypeID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contracts.TypeID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contracts.StaffID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contracts.StaffID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Contracts.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться к таблице</a>
+</div>

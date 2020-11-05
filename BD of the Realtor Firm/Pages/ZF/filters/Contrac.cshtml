@@ -1,0 +1,33 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.ZF.filters.ContracModel
+@{
+    <h1>Список договоров</h1>
+
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contracts[0].amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contracts[0].Staff_ID)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Contracts)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.amount)
+                    </td>
+                    <td>
+                        @Model.Staff.Full_name
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

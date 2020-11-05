@@ -1,0 +1,44 @@
+﻿@page
+@model BD_of_the_Realtor_Firm.Pages.Apartments_.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить";
+}
+
+<h1>Добавить</h1>
+
+<h4>Вид квартиры</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Apartments.Type_ID" class="control-label"></label>
+                <input asp-for="Apartments.Type_ID" class="form-control" />
+                <span asp-validation-for="Apartments.Type_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apartments.Type_name" class="control-label"></label>
+                <input asp-for="Apartments.Type_name" class="form-control" />
+                <span asp-validation-for="Apartments.Type_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apartments.Description" class="control-label"></label>
+                <input asp-for="Apartments.Description" class="form-control" />
+                <span asp-validation-for="Apartments.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к таблице</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
